@@ -43,7 +43,7 @@ except Exception as e:
 # This shows how to use the Deocode - Generator
 iterable = distorm3.DecodeGenerator(offset, code, options.dt)
 for (offset, size, instruction, hexdump) in iterable:
-    print("%.8x: %-32s %s" % (offset, hexdump, instruction))
+    print(("%.8x: %-32s %s" % (offset, hexdump, instruction)))
 
 # It could also be used as a returned list:
 # l = distorm3.Decode(offset, code, options.dt)
