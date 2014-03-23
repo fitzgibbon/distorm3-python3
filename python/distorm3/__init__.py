@@ -539,10 +539,10 @@ def DecodeGenerator(codeOffset, code, dt):
 
         for index in range(used):
             di   = result[index]
-            asm  = di.mnemonic.p
+            asm  = di.mnemonic.p.decode()
             if len(di.operands.p):
-                asm += " " + di.operands.p
-            pydi = (di.offset, di.size, asm, di.instructionHex.p)
+                asm += " " + di.operands.p.decode()
+            pydi = (di.offset, di.size, asm, di.instructionHex.p.decode())
             instruction_off += di.size
             yield pydi
 
